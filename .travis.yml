@@ -20,6 +20,7 @@ services:
 - mysql
 - postgresql
 before_install:
+- mkdir -p $HOME/.gradle
 - cp $TRAVIS_BUILD_DIR/scripts/travis/init.gradle $HOME/.gradle
 - psql -c 'drop database if exists uaa;' -U postgres
 - psql -c 'create database uaa;' -U postgres
